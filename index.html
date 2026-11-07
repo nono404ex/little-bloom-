@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#fff1f6">
+<meta name="description" content="A little corner made to remind you that your steps matter.">
+<title>a little bloom for you ♡</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--pink:#f6a9c5;--hot:#e979a5;--pale:#fff1f6;--cream:#fffaf6;--ink:#654b59;--muted:#987d8b;--line:#f4dce6;--white:#fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--pale);color:var(--ink);font-family:"DM Sans",sans-serif;overflow-x:hidden}button{font:inherit;cursor:pointer;border:0}a{color:inherit;text-decoration:none}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.28;background-image:radial-gradient(#eaa4bf 1px,transparent 1px);background-size:20px 20px;z-index:-1}
+.wrap{width:min(1080px,92%);margin:auto}.nav{position:sticky;top:0;z-index:20;background:#fffaf6d9;backdrop-filter:blur(14px);border-bottom:1px solid #f4dce6}.navin{height:66px;display:flex;align-items:center;justify-content:space-between}.brand{font-family:Nunito,sans-serif;font-weight:900;font-size:18px;color:#d96f99}.brand span{color:#ef9cba}.navlinks{display:flex;gap:20px;font-size:13px;color:var(--muted)}.navlinks a:hover{color:var(--hot)}
+.hero{padding:38px 0 54px}.hero-card{position:relative;min-height:540px;border-radius:34px;overflow:hidden;background:#e8c9d4;box-shadow:0 18px 55px #b77e9830;display:flex;align-items:flex-end}.hero-card:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#2b172500 20%,#2b17260c 42%,#311b2cbf 100%);z-index:1}.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 34%;filter:saturate(.88)}.hero-content{position:relative;z-index:2;padding:clamp(25px,6vw,62px);color:white;max-width:680px}.eyebrow{display:inline-flex;gap:8px;align-items:center;background:#fff8f1e8;color:#b85e82;border-radius:99px;padding:9px 14px;font-size:12px;font-weight:700;letter-spacing:.04em}.hero h1{font:900 clamp(42px,8vw,78px)/.98 Nunito,sans-serif;margin:18px 0 14px;letter-spacing:-.04em}.hero p{max-width:480px;line-height:1.75;font-size:15px;color:#fff8fb;margin:0 0 24px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:#fff7f2;color:#b65e83;border-radius:99px;padding:13px 20px;font-weight:800;box-shadow:0 7px 20px #32182c22;transition:.2s}.btn:hover{transform:translateY(-3px)}.tiny{font-size:12px;opacity:.85;margin-left:10px}
+.section{padding:42px 0}.section-head{text-align:center;margin:0 auto 25px;max-width:560px}.kicker{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#d47c9d;font-weight:800}.section h2{font:900 clamp(28px,5vw,42px) Nunito,sans-serif;margin:8px 0;color:#765465}.section-head p{font-size:14px;color:var(--muted);line-height:1.7;margin:0}
+.note-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:18px}.note-main,.note-side,.panel{background:#fffaf7;border:1px solid var(--line);border-radius:26px;padding:26px;box-shadow:0 10px 32px #bd8aa31a}.note-main{background:linear-gradient(135deg,#fffaf7,#ffeaf2)}.note-main h3{font:900 25px Nunito;margin:0 0 10px}.note-main p{font-size:14px;line-height:1.85;color:#876d7b}.note-side{display:flex;flex-direction:column;justify-content:center;align-items:flex-start}.note-side .big{font-size:35px}.note-side p{line-height:1.7;font-size:14px;color:var(--muted)}.pill{border-radius:99px;background:#ffe4ee;color:#bb6386;padding:10px 15px;font-size:12px;font-weight:800}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.polaroid{background:white;padding:9px 9px 17px;border-radius:9px;box-shadow:0 8px 24px #9d6c8020;transform:rotate(var(--r));transition:.25s}.polaroid:hover{transform:rotate(0) translateY(-6px)}.polaroid img{width:100%;height:190px;object-fit:cover;border-radius:5px}.polaroid span{display:block;text-align:center;font:700 13px Nunito;color:#9a7184;padding-top:10px}
+.game-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.game-card{background:#fffaf7;border:1px solid var(--line);border-radius:23px;padding:22px;text-align:left;box-shadow:0 8px 24px #bd8aa31a;transition:.2s}.game-card:hover{transform:translateY(-4px);border-color:#edb4ca}.game-icon{font-size:32px}.game-card h3{font:900 19px Nunito;margin:12px 0 5px}.game-card p{font-size:13px;line-height:1.6;color:var(--muted);margin:0}.game-card button{margin-top:15px;background:#ffe5ef;color:#b85e82;padding:10px 14px;border-radius:99px;font-weight:800;font-size:12px}
+.gamebox{margin-top:18px;display:none;background:#fffaf7;border:1px solid var(--line);border-radius:25px;padding:22px;box-shadow:0 10px 30px #bd8aa31a}.gamebox.active{display:block}.game-top{display:flex;justify-content:space-between;align-items:center;gap:10px}.game-top h3{font:900 21px Nunito;margin:0}.close{background:#fbe5ee;color:#a65c7b;border-radius:50%;width:34px;height:34px;font-size:18px}.game-area{min-height:190px;margin-top:15px;background:#fff0f5;border-radius:18px;padding:18px;text-align:center;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px}.game-action{background:#e985aa;color:white;padding:11px 18px;border-radius:99px;font-weight:800}.memory{display:grid;grid-template-columns:repeat(4, minmax(48px,68px));gap:9px;justify-content:center}.tile{height:64px;border-radius:14px;background:#f6bfd2;color:#a75d7e;font-size:25px;font-weight:800}.tile.open{background:#fff;color:#a75d7e}.bubbles{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}.bubble{width:48px;height:48px;border-radius:50%;background:#f4a9c4;box-shadow:inset -5px -6px 0 #df82a4;color:white;font-size:20px}.bubble:active{transform:scale(.85)}
+.garden{background:linear-gradient(135deg,#fffaf7,#ffeaf2);border:1px solid var(--line);border-radius:28px;padding:26px;text-align:center}.flowers{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;min-height:70px;align-items:center;font-size:32px}.garden p{font-size:13px;color:var(--muted);line-height:1.7}.progress{height:9px;background:#f8dce7;border-radius:99px;overflow:hidden;max-width:360px;margin:15px auto}.progress span{display:block;height:100%;width:0;background:#e985aa;border-radius:99px;transition:.4s}
+.footer{text-align:center;padding:40px 0 55px;color:#a88798;font-size:12px}.footer strong{color:#d47c9d}.heart{position:fixed;pointer-events:none;z-index:50;animation:float 1.2s ease-out forwards;font-size:18px}@keyframes float{to{transform:translateY(-90px) rotate(25deg);opacity:0}}
+.modal{position:fixed;inset:0;background:#43253666;display:none;align-items:center;justify-content:center;padding:20px;z-index:40}.modal.show{display:flex}.modal-card{max-width:380px;width:100%;background:#fffaf7;border-radius:25px;padding:28px;text-align:center;box-shadow:0 20px 60px #32182c44}.modal-card .emoji{font-size:42px}.modal-card h3{font:900 24px Nunito;margin:8px}.modal-card p{font-size:14px;line-height:1.7;color:var(--muted)}.modal-card button{margin-top:10px}
+@media(max-width:700px){.navin{height:58px}.navlinks{gap:12px;font-size:11px}.hero{padding:18px 0 32px}.hero-card{min-height:590px;border-radius:25px}.hero-img{object-position:56% center}.hero-content{padding:25px}.hero h1{font-size:52px}.section{padding:30px 0}.note-grid{grid-template-columns:1fr}.gallery{grid-template-columns:repeat(2,1fr);gap:12px}.polaroid img{height:180px}.game-grid{grid-template-columns:1fr}.game-card{display:grid;grid-template-columns:48px 1fr;column-gap:12px;align-items:center;padding:16px}.game-card .game-icon{grid-row:span 3}.game-card h3{margin:0}.game-card button{justify-self:start;margin-top:8px}.note-main,.note-side{padding:21px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap navin"><a class="brand" href="#">little bloom <span>♡</span></a><div class="navlinks"><a href="#notes">notes</a><a href="#games">mini games</a><a href="#garden">garden</a></div></div></nav>
+<main>
+<section class="hero wrap">
+ <div class="hero-card"><img class="hero-img" src="assets/hero.webp" alt="A photo for this little corner"><div class="hero-content">
+  <span class="eyebrow">a tiny corner, just for you ✿</span>
+  <h1>you've got<br>this, pretty.</h1>
+  <p>Pelan-pelan aja, ya. Kamu nggak harus punya semua jawabannya hari ini. Satu langkah kecil tetap berarti, dan kamu pantas bangga sama diri sendiri.</p>
+  <a class="btn" href="#notes">open your little note <span>♡</span></a><span class="tiny">made with a little care</span>
+ </div></div>
+</section>
+<section class="section wrap" id="notes"><div class="section-head"><div class="kicker">a note for you</div><h2>just a little reminder ♡</h2><p>Kalau hari ini terasa panjang, baca ini sebentar.</p></div>
+ <div class="note-grid"><article class="note-main"><div class="kicker">dear you,</div><h3>you are right on time.</h3><p>Perjalanan setiap orang punya waktunya masing-masing. Nggak perlu membandingkan langkahmu dengan orang lain. Kamu sudah sampai di titik ini, dan itu layak dihargai. Kalau ada hari yang terasa berat, istirahat dulu. Besok boleh coba lagi, sedikit demi sedikit.</p><p>Semoga kamu ketemu banyak hal baik di kampus, teman yang tulus, dosen yang memudahkan, dan alasan kecil buat tetap semangat. 🌷</p></article>
+ <aside class="note-side"><div class="big">☁️ 🌸</div><h3 style="font:900 21px Nunito;margin:8px 0">a soft reminder</h3><p>Kamu nggak telat untuk tumbuh. Nggak harus buru-buru untuk membuktikan apa pun. Keep going, at your own pace.</p><button class="pill" id="randomNote">give me a random note ✨</button></aside></div>
+</section>
+<section class="section wrap"><div class="section-head"><div class="kicker">little memories</div><h2>your photo corner 🎀</h2><p>Beberapa potongan kecil buat bikin halaman ini terasa lebih personal.</p></div>
+ <div class="gallery">
+  <div class="polaroid" style="--r:-2deg"><img src="assets/wink.webp" alt="Photo"><span>you look lovely ♡</span></div>
+  <div class="polaroid" style="--r:2deg"><img src="assets/selfie-2.webp" alt="Photo"><span>keep that smile</span></div>
+  <div class="polaroid" style="--r:-1deg"><img src="assets/scarf-3.webp" alt="Photo"><span>little sunshine ☀</span></div>
+  <div class="polaroid" style="--r:2deg"><img src="assets/grey-4.webp" alt="Photo"><span>one day at a time</span></div>
+ </div>
+</section>
+<section class="section wrap" id="games"><div class="section-head"><div class="kicker">take a tiny break</div><h2>mini games corner 🎮</h2><p>Istirahat sebentar juga bagian dari produktif. Main yang ringan-ringan dulu.</p></div>
+ <div class="game-grid">
+  <article class="game-card"><div class="game-icon">🧠</div><h3>memory match</h3><p>Temukan pasangan kartu yang sama.</p><button data-game="memory">play now ↗</button></article>
+  <article class="game-card"><div class="game-icon">🫧</div><h3>pop the bubbles</h3><p>Tap gelembung sebanyak yang kamu bisa.</p><button data-game="bubble">play now ↗</button></article>
+  <article class="game-card"><div class="game-icon">💗</div><h3>catch the hearts</h3><p>Tangkap hati yang muncul sebelum waktunya habis.</p><button data-game="heart">play now ↗</button></article>
+ </div>
+ <div class="gamebox" id="gamebox"><div class="game-top"><h3 id="gameTitle">memory match</h3><button class="close" id="closeGame" aria-label="Close">×</button></div><div class="game-area" id="gameArea"></div></div>
+</section>
+<section class="section wrap" id="garden"><div class="section-head"><div class="kicker">a tiny reward</div><h2>your little garden 🌷</h2><p>Setiap kali kamu menyelesaikan mini game, satu bunga akan tumbuh di sini.</p></div>
+ <div class="garden"><div class="flowers" id="flowers"><span style="font-size:13px;color:#b995a5">your flowers will bloom here...</span></div><div class="progress"><span id="progress"></span></div><p id="gardenText">0 bunga terkumpul · keep going at your own pace ♡</p></div>
+</section>
+</main>
+<footer class="footer">made with <strong>♡</strong> and a little wish for your days to be kinder.</footer>
+<div class="modal" id="modal"><div class="modal-card"><div class="emoji" id="modalEmoji">🌷</div><h3 id="modalTitle">you did it!</h3><p id="modalText">One little flower for you.</p><button class="game-action" id="modalClose">thank you ♡</button></div></div>
+<script>
+const $=s=>document.querySelector(s);
+const notes=[
+"Jangan lupa makan dan minum di sela-sela kesibukanmu, ya. Kamu juga perlu dijaga. ♡",
+"Kalau hari ini belum sesuai harapan, bukan berarti kamu gagal. Masih ada hari esok.",
+"Semoga ada satu hal kecil hari ini yang bikin kamu tersenyum. You deserve that.",
+"Nggak apa-apa kalau harus mulai pelan-pelan. Yang penting kamu tetap kasih kesempatan buat diri sendiri.",
+"Take a breath. Kamu sudah berusaha, dan itu nggak sia-sia. 🌷"
+];
+$("#randomNote").onclick=()=>showModal("💌","a note for today",notes[Math.floor(Math.random()*notes.length)]);
+function showModal(e,t,p){$("#modalEmoji").textContent=e;$("#modalTitle").textContent=t;$("#modalText").textContent=p;$("#modal").classList.add("show")}
+$("#modalClose").onclick=()=>$("#modal").classList.remove("show");
+$("#modal").onclick=e=>{if(e.target.id==="modal")$("#modal").classList.remove("show")};
+let flowers=0;
+function bloom(){flowers++;const f=document.createElement("span");f.textContent=["🌷","🌸","🌼","🌺","🪻"][Math.floor(Math.random()*5)];$("#flowers").append(f);$("#progress").style.width=Math.min(100,flowers*20)+"%";$("#gardenText").textContent=flowers+" bunga terkumpul · look at your little garden ♡";showModal("🌷","one more flower!","Kamu berhasil menyelesaikan game. Semoga hari kamu ikut mekar sedikit.");}
+function hearts(x,y){for(let i=0;i<4;i++){let h=document.createElement("span");h.className="heart";h.textContent=["♡","♥","✿"][Math.floor(Math.random()*3)];h.style.left=(x+Math.random()*30-10)+"px";h.style.top=(y+Math.random()*20)+"px";h.style.color="#e985aa";document.body.append(h);setTimeout(()=>h.remove(),1200)}}
+document.addEventListener("click",e=>{if(e.target.closest("button")||e.target.closest(".btn"))hearts(e.clientX,e.clientY)});
+const box=$("#gamebox"),area=$("#gameArea");let timer=null;
+function openGame(type){clearInterval(timer);box.classList.add("active");box.scrollIntoView({behavior:"smooth",block:"center"});
+ if(type==="memory") memoryGame(); if(type==="bubble") bubbleGame(); if(type==="heart") heartGame();}
+document.querySelectorAll("[data-game]").forEach(b=>b.onclick=()=>openGame(b.dataset.game));
+$("#closeGame").onclick=()=>{clearInterval(timer);box.classList.remove("active")};
+function memoryGame(){
+ $("#gameTitle").textContent="memory match 🧠";let icons=["🌷","🍓","🎀","🧁","🌙","🦋","🍒","⭐"];let deck=[...icons,...icons].sort(()=>Math.random()-.5),first=null,lock=false,matches=0,moves=0;
+ area.innerHTML='<p>Temukan semua pasangan kartu. Good luck! ♡</p><div class="memory" id="memory"></div><p id="moves">moves: 0</p>';
+ const grid=$("#memory");deck.forEach((v,i)=>{let b=document.createElement("button");b.className="tile";b.textContent="♡";b.onclick=()=>{if(lock||b.classList.contains("open")||b.dataset.done)return;b.classList.add("open");b.textContent=v;if(!first){first={b,v};return}moves++;$("#moves").textContent="moves: "+moves;if(first.v===v){first.b.dataset.done="1";b.dataset.done="1";matches++;first=null;if(matches===8){setTimeout(bloom,400)}}else{lock=true;let old=first.b;first=null;setTimeout(()=>{old.classList.remove("open");old.textContent="♡";b.classList.remove("open");b.textContent="♡";lock=false},650)}};grid.append(b)});
+}
+function bubbleGame(){
+ $("#gameTitle").textContent="pop the bubbles 🫧";let score=0,time=15;
+ area.innerHTML='<p>Tap gelembungnya sebanyak mungkin dalam 15 detik!</p><div class="bubbles" id="bubbles"></div><p id="bubbleScore">score: 0 · 15s</p><button class="game-action" id="startBubble">start popping!</button>';
+ $("#startBubble").onclick=()=>{score=0;time=15;$("#bubbles").innerHTML="";$("#startBubble").disabled=true;function add(){let b=document.createElement("button");b.className="bubble";b.textContent=["♡","✿","•"][Math.floor(Math.random()*3)];b.onclick=()=>{score++;$("#bubbleScore").textContent="score: "+score+" · "+time+"s";b.remove()};$("#bubbles").append(b)}for(let i=0;i<8;i++)add();timer=setInterval(()=>{time--;$("#bubbleScore").textContent="score: "+score+" · "+time+"s";if(time<=0){clearInterval(timer);$("#startBubble").disabled=false;$("#startBubble").textContent="play again";$("#bubbles").innerHTML=score>=8?"🌸 you did amazing!":"🌷 nice try, little by little!";if(score>=8)bloom()}},1000)};
+}
+function heartGame(){
+ $("#gameTitle").textContent="catch the hearts 💗";let score=0,time=15;
+ area.innerHTML='<p>Tap hati yang muncul. Kumpulkan 8 hati dalam 15 detik!</p><div id="heartTarget" style="font-size:56px;min-height:70px">♡</div><p id="heartScore">score: 0 · 15s</p><button class="game-action" id="startHeart">start game!</button>';
+ $("#startHeart").onclick=()=>{score=0;time=15;$("#startHeart").disabled=true;let target=$("#heartTarget");function spawn(){target.textContent=["💗","💖","💕","💞"][Math.floor(Math.random()*4)];target.style.transform="scale(1.12)";setTimeout(()=>target.style.transform="scale(1)",100)}target.onclick=()=>{if(time>0){score++;$("#heartScore").textContent="score: "+score+" · "+time+"s";spawn()}};spawn();timer=setInterval(()=>{time--;$("#heartScore").textContent="score: "+score+" · "+time+"s";if(time<=0){clearInterval(timer);$("#startHeart").disabled=false;$("#startHeart").textContent="play again";target.textContent=score>=8?"🎉":"🌷";if(score>=8)bloom()}},1000)};
+}
+</script>
+</body></html>
